@@ -20,6 +20,9 @@ const Menu = () => {
           <li>
             <Link to="/atualizar-usuario">Atualizar Usuario</Link>
           </li>
+          <li>
+            <Link to="/deletar-usuario">Deletar Usuario</Link>
+          </li>
         </ul>
       </nav>
     </div>

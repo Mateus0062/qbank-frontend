@@ -8,6 +8,7 @@ import Cadastro from './components/Cadastro';
 import Menu from './components/Menu';
 import BuscarUsuario from './components/BuscarUsuario';
 import AtualizarUsuario from './components/AtualizarUsuario';
+import DeletarUsuario from './components/DeletarUsuario';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -41,6 +42,10 @@ function App() {
         <Route
           path='/atualizar-usuario'
           element={authenticated ? <AtualizarUsuario /> : <Navigate to="/Login" />}
+        />
+        <Route
+          path='/deletar-usuario'
+          element={authenticated ? <DeletarUsuario /> : <Navigate to="/Login" />}
         />
       </Routes>
     </Router>
