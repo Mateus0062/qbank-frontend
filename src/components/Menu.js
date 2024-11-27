@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Menu = () => {
   return (
     <div>
-      <h2>Menu</h2>
+      <h2 class="menu">Menu</h2>
       <nav>
         <ul>
           <li>
@@ -29,4 +29,6 @@ const Menu = () => {
   );
 };
 
+
 export default Menu;
+
