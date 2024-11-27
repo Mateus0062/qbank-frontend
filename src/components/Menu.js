@@ -17,6 +17,9 @@ const Menu = () => {
           <li>
             <Link to="/buscar-usuario">Buscar Usuario</Link>
           </li>
+          <li>
+            <Link to="/atualizar-usuario">Atualizar Usuario</Link>
+          </li>
         </ul>
       </nav>
     </div>

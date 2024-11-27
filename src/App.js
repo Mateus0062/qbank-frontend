@@ -7,6 +7,7 @@ import { isAuthenticated } from './services/authService';
 import Cadastro from './components/Cadastro';
 import Menu from './components/Menu';
 import BuscarUsuario from './components/BuscarUsuario';
+import AtualizarUsuario from './components/AtualizarUsuario';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -36,6 +37,10 @@ function App() {
         <Route
           path='/buscar-usuario'
           element={authenticated ? <BuscarUsuario /> : <Navigate to="/Login" />}
+        />
+        <Route
+          path='/atualizar-usuario'
+          element={authenticated ? <AtualizarUsuario /> : <Navigate to="/Login" />}
         />
       </Routes>
     </Router>
