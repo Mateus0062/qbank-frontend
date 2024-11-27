@@ -1,35 +1,49 @@
+// src/components/Login.js
 import React, { useState } from 'react';
-import { login } from '../services/api';
+import { login } from '../services/authService';
+import { Navigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [redirectToAccounts, setRedirectToAccounts] = useState(false);
 
-  const handleLogin = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      const response = await login(username, password);
-      console.log('Login bem-sucedido:', response);
-    } catch (error) {
-      console.error('Erro ao fazer login:', error);
+      await login(username, password);
+      setRedirectToAccounts(true); // Redireciona para a página de contas após login bem-sucedido
+    } catch (err) {
+      setError('Falha no login. Verifique suas credenciais.');
     }
   };
 
+  if (redirectToAccounts) {
+    return <Navigate to="/accounts" />;
+  }
+
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
+    <div>
       <h2>Login</h2>
-      <input
-        type="text"
-        placeholder="Usuário"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Senha"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogin}>Entrar</button>
+      {error && <p>{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Usuário"
+          required
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Senha"
+          required
+        />
+        <button type="submit">Entrar</button>
+      </form>
     </div>
   );
 };
