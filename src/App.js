@@ -18,7 +18,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Definindo as rotas dentro de <Routes> */}
+        <Route 
+          path='/'
+          element={authenticated ? <Menu /> : <Navigate to="/Login" />}
+        />
+        
         <Route path="/Login" element={<Login />} />
         <Route
           path="/accounts"
