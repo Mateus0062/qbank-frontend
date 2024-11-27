@@ -12,7 +12,7 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
-    setAuthenticated(isAuthenticated()); // Verifica se está autenticado
+    setAuthenticated(isAuthenticated());  
   }, []);
 
   return (
@@ -26,7 +26,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route
           path="/accounts"
-          element={authenticated ? <Accounts /> : <Navigate to="/Login" />} // Substituindo o Redirect por Navigate
+          element={authenticated ? <Accounts /> : <Navigate to="/Login" />} 
         />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route 

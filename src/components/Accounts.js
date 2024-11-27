@@ -9,7 +9,7 @@ const Accounts = () => {
   useEffect(() => {
     const fetchAccounts = async () => {
       try {
-        const response = await api.get('account'); // Acessando a rota correta
+        const response = await api.get('account'); 
         setAccounts(response.data);
       } catch (error) {
         setError('Erro ao carregar contas.');

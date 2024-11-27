@@ -14,7 +14,7 @@ const Cadastro = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Obtendo o token do localStorage (ou onde você estiver armazenando)
+    
     const token = localStorage.getItem('token');
 
     if (!token) {
@@ -23,28 +23,27 @@ const Cadastro = () => {
     }
 
     try {
-      // Envia os dados do novo usuário para a API usando o método POST
+      
       const response = await axios.post(
         'https://localhost:7100/api/Account',
         {
           name,
-          age: parseInt(age), // Certifica-se de que age é um número inteiro
+          age: parseInt(age), 
           accountHolder,
           accountNumber,
-          balance: parseFloat(balance), // Certifica-se de que balance é um número decimal
+          balance: parseFloat(balance), 
         },
         {
           headers: {
-            'Authorization': `Bearer ${token}`, // Inclui o token de autenticação no cabeçalho
+            'Authorization': `Bearer ${token}`, 
           },
         }
       );
-
-      // Caso o cadastro seja bem-sucedido, mostra uma mensagem de sucesso
+      
       setSuccessMessage('Usuário cadastrado com sucesso!');
       setError('');
     } catch (err) {
-      // Caso ocorra um erro, exibe a mensagem de erro
+      
       setError('Falha no cadastro. Verifique os dados e tente novamente.');
       setSuccessMessage('');
     }

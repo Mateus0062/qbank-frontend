@@ -1,7 +1,7 @@
 // src/components/BuscarUsuario.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { getToken } from '../services/authService'; // Função para obter o token armazenado
+import { getToken } from '../services/authService'; 
 
 const BuscarUsuario = () => {
   const [id, setId] = useState('');
@@ -11,16 +11,16 @@ const BuscarUsuario = () => {
   const handleSearch = async (event) => {
     event.preventDefault();
 
-    const token = getToken(); // Recupera o token do armazenamento local ou contexto
+    const token = getToken();
 
     try {
       const response = await axios.get(`https://localhost:7100/api/Account/${id}`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Adiciona o token no cabeçalho da requisição
+          Authorization: `Bearer ${token}`, 
         },
       });
-      setUsuario(response.data); // Armazena os dados do usuário encontrado
-      setError(''); // Limpa a mensagem de erro, caso haja
+      setUsuario(response.data); 
+      setError(''); 
     } catch (err) {
       setUsuario(null);
       setError('Usuário não encontrado ou erro na requisição.');

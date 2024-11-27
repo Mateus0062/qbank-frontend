@@ -13,7 +13,7 @@ const Login = () => {
     event.preventDefault();
     try {
       await login(username, password);
-      setRedirectToAccounts(true); // Redireciona para a página de contas após login bem-sucedido
+      setRedirectToAccounts(true); 
     } catch (err) {
       setError('Falha no login. Verifique suas credenciais.');
     }
