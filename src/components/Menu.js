@@ -14,6 +14,9 @@ const Menu = () => {
           <li>
             <Link to="/cadastro">Cadastrar novo usuário</Link>
           </li>
+          <li>
+            <Link to="/buscar-usuario">Buscar Usuario</Link>
+          </li>
         </ul>
       </nav>
     </div>

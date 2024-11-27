@@ -6,6 +6,7 @@ import Login from './components/Login';
 import { isAuthenticated } from './services/authService';
 import Cadastro from './components/Cadastro';
 import Menu from './components/Menu';
+import BuscarUsuario from './components/BuscarUsuario';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -27,6 +28,10 @@ function App() {
         <Route 
           path="/menu"
           element={authenticated ? <Menu /> : <Navigate to="/Login" />}
+        />
+        <Route
+          path='/buscar-usuario'
+          element={authenticated ? <BuscarUsuario /> : <Navigate to="/Login" />}
         />
       </Routes>
     </Router>
