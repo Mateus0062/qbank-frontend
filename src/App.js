@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Accounts from './components/Accounts';
 import Login from './components/Login';
 import { isAuthenticated } from './services/authService';
+import Cadastro from './components/Cadastro';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -21,6 +22,7 @@ function App() {
           path="/accounts"
           element={authenticated ? <Accounts /> : <Navigate to="/Login" />} // Substituindo o Redirect por Navigate
         />
+        <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
     </Router>
   );
