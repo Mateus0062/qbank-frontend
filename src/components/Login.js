@@ -20,7 +20,7 @@ const Login = () => {
   };
 
   if (redirectToAccounts) {
-    return <Navigate to="/accounts" />;
+    return <Navigate to="/menu" />;
   }
 
   return (

@@ -5,6 +5,7 @@ import Accounts from './components/Accounts';
 import Login from './components/Login';
 import { isAuthenticated } from './services/authService';
 import Cadastro from './components/Cadastro';
+import Menu from './components/Menu';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -23,6 +24,10 @@ function App() {
           element={authenticated ? <Accounts /> : <Navigate to="/Login" />} // Substituindo o Redirect por Navigate
         />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route 
+          path="/menu"
+          element={authenticated ? <Menu /> : <Navigate to="/Login" />}
+        />
       </Routes>
     </Router>
   );
