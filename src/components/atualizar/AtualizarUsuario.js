@@ -1,7 +1,8 @@
 // src/components/AtualizarUsuario.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { getToken } from '../services/authService';
+import { getToken } from '../../services/authService';
+import './AtualizarUsuario.css'
 
 const AtualizarUsuario = () => {
   const [id, setId] = useState('');
@@ -65,7 +66,7 @@ const AtualizarUsuario = () => {
   };
 
   return (
-    <div>
+    <div className='atualizar-container'>
       <h2>Atualizar Usuário</h2>
 
       {/* Formulário para buscar o usuário */}

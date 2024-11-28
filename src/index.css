@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -14,11 +15,15 @@ code {
 
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 100vw;
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background: #450000;
 }
 
 h1 {
-  color: #333;
+  color: #333333;
   text-align: center;
 }

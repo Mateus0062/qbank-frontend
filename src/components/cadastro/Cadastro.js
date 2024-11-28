@@ -1,6 +1,7 @@
 // src/components/Cadastro.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Cadastro.css'
 
 const Cadastro = () => {
   const [name, setName] = useState('');
@@ -50,8 +51,8 @@ const Cadastro = () => {
   };
 
   return (
-    <div>
-      <h2>Cadastrar Novo Usuário</h2>
+    <div className='cadastro-container'>
+      <h2 className='cadastro-tittle'>Cadastrar Novo Usuário</h2>
 
       {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}

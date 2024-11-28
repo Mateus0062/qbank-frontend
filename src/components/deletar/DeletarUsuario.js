@@ -1,7 +1,8 @@
 // src/components/DeletarUsuario.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { getToken } from '../services/authService';
+import { getToken } from '../../services/authService';
+import './DeletarUsuario.css'
 
 const DeletarUsuario = () => {
   const [id, setId] = useState('');
@@ -51,7 +52,7 @@ const DeletarUsuario = () => {
   };
 
   return (
-    <div>
+    <div className='deletar-container'>
       <h2>Deletar Usuário</h2>
 
       {/* Formulário para buscar o usuário */}
@@ -67,7 +68,7 @@ const DeletarUsuario = () => {
             required
           />
         </div>
-        <button type="submit">Buscar</button>
+        <button type="submit">Deletar</button>
       </form>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}

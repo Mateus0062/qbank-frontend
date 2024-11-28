@@ -1,6 +1,7 @@
 // src/components/Accounts.js
 import React, { useEffect, useState } from 'react';
-import api from '../services/api';
+import api from '../../services/api';
+import './Accounts.css'
 
 const Accounts = () => {
   const [accounts, setAccounts] = useState([]);
@@ -20,8 +21,8 @@ const Accounts = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Contas</h2>
+    <div className='contas-container'>
+      <h2 className='accounts'>Contas</h2>
       {error && <p>{error}</p>}
       <ul>
         {accounts.map((account) => (

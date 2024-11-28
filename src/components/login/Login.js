@@ -1,7 +1,9 @@
 // src/components/Login.js
 import React, { useState } from 'react';
-import { login } from '../services/authService';
+import { login } from '../../services/authService';
 import { Navigate } from 'react-router-dom';
+import Logo from '../../assets/QBank.png'
+import './Login.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -23,8 +25,10 @@ const Login = () => {
     return <Navigate to="/menu" />;
   }
 
-  return (
-    <div>
+  return ( 
+     
+    <div className='login-container'>
+      <img src={Logo}/>
       <h2>Login</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>

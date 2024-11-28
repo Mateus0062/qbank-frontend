@@ -1,11 +1,12 @@
 // src/components/Menu.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Menu.css'
 
 const Menu = () => {
   return (
-    <div>
-      <h2 class="menu">Menu</h2>
+    <div className='menu-container'>
+      <h2>Menu</h2>
       <nav>
         <ul>
           <li>

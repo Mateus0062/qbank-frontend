@@ -1,14 +1,14 @@
 // src/App.js
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'; // Importando as mudanças
-import Accounts from './components/Accounts';
-import Login from './components/Login';
+import Accounts from '../src/components/contas/Accounts';
+import Login from './components/login/Login';
 import { isAuthenticated } from './services/authService';
-import Cadastro from './components/Cadastro';
-import Menu from './components/Menu';
-import BuscarUsuario from './components/BuscarUsuario';
-import AtualizarUsuario from './components/AtualizarUsuario';
-import DeletarUsuario from './components/DeletarUsuario';
+import Cadastro from './components/cadastro/Cadastro';
+import Menu from './components/menu/Menu';
+import BuscarUsuario from './components/buscar/BuscarUsuario';
+import AtualizarUsuario from './components/atualizar/AtualizarUsuario';
+import DeletarUsuario from './components/deletar/DeletarUsuario';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);

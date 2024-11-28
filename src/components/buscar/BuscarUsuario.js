@@ -1,7 +1,8 @@
 // src/components/BuscarUsuario.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { getToken } from '../services/authService'; 
+import { getToken } from '../../services/authService'; 
+import './BuscarUsuario.css'
 
 const BuscarUsuario = () => {
   const [id, setId] = useState('');
@@ -28,7 +29,7 @@ const BuscarUsuario = () => {
   };
 
   return (
-    <div>
+    <div className='buscar-container'>
       <h2>Buscar Usuário</h2>
 
       <form onSubmit={handleSearch}>

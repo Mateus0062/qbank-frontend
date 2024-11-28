@@ -1,0 +1,39 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+    color: #fff;
+    font-size: 32px;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 30px;
+    height: 30px;
+    font-size: 16px;
+    padding: 15px;
+    margin-left: 30px;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+button {
+    margin-top: 50px;
+    border-radius: 10px;
+    height: 40px;
+    width: 400px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #450000;
+    font-size:medium;
+}
+
+& button:hover {
+    opacity: 0.9;
+}

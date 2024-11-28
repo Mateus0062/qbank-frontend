@@ -1,0 +1,17 @@
+.cadastro-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    font-size: 16px;
+}
+
+label {
+    margin-left: 50px;
+}
+
+.cadastro-tittle {
+    font-size: 32px;
+}

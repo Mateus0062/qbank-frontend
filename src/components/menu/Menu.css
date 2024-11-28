@@ -1,0 +1,23 @@
+.menu-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90vh;
+    color: #fff;
+    font-size: 32px;
+}
+
+li {
+    background-color: #fff;
+    border-radius: 30px;
+    margin-top: 40px;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 60px;
+    
+    & a {
+        text-decoration: none;
+        color: #450000;
+    }
+}
