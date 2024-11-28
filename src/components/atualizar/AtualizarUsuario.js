@@ -42,16 +42,12 @@ const AtualizarUsuario = () => {
     const token = getToken();
 
     try {
-      const response = await axios.put(`https://localhost:7100/api/Account/${id}`, {
+      const response = await apiProxy.put(`Account/${id}`, {
         name,
         age: parseInt(age),
         accountHolder,
         accountNumber,
         balance: parseFloat(balance),
-      }, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
       });
 
       setSuccessMessage('Usuário atualizado com sucesso!');
