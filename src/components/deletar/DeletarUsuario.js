@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { getToken } from '../../services/authService';
 import './DeletarUsuario.css'
+import apiProxy from '../../services/apiProxy';
 
 const DeletarUsuario = () => {
   const [id, setId] = useState('');
@@ -17,11 +18,7 @@ const DeletarUsuario = () => {
     const token = getToken();
 
     try {
-      const response = await axios.get(`https://localhost:7100/api/Account/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await apiProxy.get(`Account/${id}`);
       setUsuario(response.data);
       setError('');
       setSuccessMessage('');
@@ -36,11 +33,7 @@ const DeletarUsuario = () => {
     const token = getToken();
 
     try {
-      const response = await axios.delete(`https://localhost:7100/api/Account/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await apiProxy.delete(`Account/${id}`);
       setSuccessMessage('Usuário deletado com sucesso!');
       setError('');
       setUsuario(null);

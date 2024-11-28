@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { getToken } from '../../services/authService'; 
 import './BuscarUsuario.css'
+import apiProxy from '../../services/apiProxy';
 
 const BuscarUsuario = () => {
   const [id, setId] = useState('');
@@ -12,17 +13,15 @@ const BuscarUsuario = () => {
   const handleSearch = async (event) => {
     event.preventDefault();
 
-    const token = getToken();
+    //const token = getToken();
 
     try {
-      const response = await axios.get(`https://localhost:7100/api/Account/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`, 
-        },
-      });
+      // Faz a requisição usando o serviço `api` com Proxy
+      const response = await apiProxy.get(`Account/${id}`);
       setUsuario(response.data); 
       setError(''); 
     } catch (err) {
+      // Mensagem de erro exibida para o usuário
       setUsuario(null);
       setError('Usuário não encontrado ou erro na requisição.');
     }

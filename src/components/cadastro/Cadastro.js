@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Cadastro.css'
+import apiProxy from '../../services/apiProxy';
 
 const Cadastro = () => {
   const [name, setName] = useState('');
@@ -24,27 +25,19 @@ const Cadastro = () => {
     }
 
     try {
-      
-      const response = await axios.post(
-        'https://localhost:7100/api/Account',
-        {
-          name,
-          age: parseInt(age), 
-          accountHolder,
-          accountNumber,
-          balance: parseFloat(balance), 
-        },
-        {
-          headers: {
-            'Authorization': `Bearer ${token}`, 
-          },
-        }
-      );
-      
+      // Substituímos axios pelo uso do serviço api
+      const response = await apiProxy.post('Account', {
+        name,
+        age: parseInt(age), // Garantir que a idade seja um número
+        accountHolder,
+        accountNumber,
+        balance: parseFloat(balance), // Garantir que o saldo seja um número
+      });
+
       setSuccessMessage('Usuário cadastrado com sucesso!');
       setError('');
     } catch (err) {
-      
+      // O Proxy já registra logs de erro, aqui apenas mostramos uma mensagem para o usuário
       setError('Falha no cadastro. Verifique os dados e tente novamente.');
       setSuccessMessage('');
     }

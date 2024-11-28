@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 import './Accounts.css'
+import apiProxy from '../../services/apiProxy';
 
 const Accounts = () => {
   const [accounts, setAccounts] = useState([]);
@@ -10,7 +11,7 @@ const Accounts = () => {
   useEffect(() => {
     const fetchAccounts = async () => {
       try {
-        const response = await api.get('account'); 
+        const response = await apiProxy.get('Account'); 
         setAccounts(response.data);
       } catch (error) {
         setError('Erro ao carregar contas.');

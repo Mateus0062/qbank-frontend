@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { getToken } from '../../services/authService';
 import './AtualizarUsuario.css'
+import apiProxy from '../../services/apiProxy';
 
 const AtualizarUsuario = () => {
   const [id, setId] = useState('');
@@ -21,11 +22,7 @@ const AtualizarUsuario = () => {
     const token = getToken();
 
     try {
-      const response = await axios.get(`https://localhost:7100/api/Account/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await apiProxy.get(`Account/${id}`)
       setUsuario(response.data);
       setName(response.data.name);
       setAge(response.data.age);
