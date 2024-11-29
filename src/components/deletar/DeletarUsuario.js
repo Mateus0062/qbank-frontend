@@ -12,7 +12,6 @@ const DeletarUsuario = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [confirmDelete, setConfirmDelete] = useState(false);
 
-  // Função para buscar o usuário pelo ID
   const handleSearch = async (event) => {
     event.preventDefault();
     const token = getToken();
@@ -28,7 +27,6 @@ const DeletarUsuario = () => {
     }
   };
 
-  // Função para deletar o usuário
   const handleDelete = async () => {
     const token = getToken();
 
@@ -47,8 +45,6 @@ const DeletarUsuario = () => {
   return (
     <div className='deletar-container'>
       <h2>Deletar Usuário</h2>
-
-      {/* Formulário para buscar o usuário */}
       <form onSubmit={handleSearch}>
         <div>
           <label htmlFor="id">ID do Usuário:</label>
@@ -75,7 +71,6 @@ const DeletarUsuario = () => {
           <p><strong>Conta:</strong> {usuario.accountNumber}</p>
           <p><strong>Saldo:</strong> {usuario.balance}</p>
 
-          {/* Confirmação para deletar o usuário */}
           <div>
             <p>Tem certeza de que deseja deletar este usuário?</p>
             <button onClick={() => setConfirmDelete(true)}>Sim, deletar</button>

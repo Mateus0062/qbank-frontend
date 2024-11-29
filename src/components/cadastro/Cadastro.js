@@ -25,13 +25,12 @@ const Cadastro = () => {
     }
 
     try {
-      // Substituímos axios pelo uso do serviço api
       const response = await apiProxy.post('Account', {
         name,
-        age: parseInt(age), // Garantir que a idade seja um número
+        age: parseInt(age), 
         accountHolder,
         accountNumber,
-        balance: parseFloat(balance), // Garantir que o saldo seja um número
+        balance: parseFloat(balance), 
       });
 
       setSuccessMessage('Usuário cadastrado com sucesso!');

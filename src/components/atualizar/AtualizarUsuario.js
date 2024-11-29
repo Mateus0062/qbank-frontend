@@ -16,7 +16,6 @@ const AtualizarUsuario = () => {
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  // Função para buscar os dados do usuário ao fornecer o ID
   const handleSearch = async (event) => {
     event.preventDefault();
     const token = getToken();
@@ -36,7 +35,6 @@ const AtualizarUsuario = () => {
     }
   };
 
-  // Função para atualizar os dados do usuário
   const handleUpdate = async (event) => {
     event.preventDefault();
     const token = getToken();
@@ -62,7 +60,6 @@ const AtualizarUsuario = () => {
     <div className='atualizar-container'>
       <h2>Atualizar Usuário</h2>
 
-      {/* Formulário para buscar o usuário */}
       <form onSubmit={handleSearch}>
         <div>
           <label htmlFor="id">ID do Usuário:</label>
@@ -82,7 +79,6 @@ const AtualizarUsuario = () => {
 
       {usuario && (
         <div>
-          {/* Formulário para editar o usuário */}
           <h3>Editar Dados do Usuário</h3>
           <form onSubmit={handleUpdate}>
             <div>

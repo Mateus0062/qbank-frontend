@@ -13,15 +13,11 @@ const BuscarUsuario = () => {
   const handleSearch = async (event) => {
     event.preventDefault();
 
-    //const token = getToken();
-
     try {
-      // Faz a requisição usando o serviço `api` com Proxy
       const response = await apiProxy.get(`Account/${id}`);
       setUsuario(response.data); 
       setError(''); 
     } catch (err) {
-      // Mensagem de erro exibida para o usuário
       setUsuario(null);
       setError('Usuário não encontrado ou erro na requisição.');
     }

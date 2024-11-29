@@ -1,6 +1,6 @@
 // src/components/Accounts.js
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Importando Link do react-router-dom
+import { Link } from 'react-router-dom'; 
 import apiProxy from '../../services/apiProxy';
 import './Accounts.css';
 
@@ -38,9 +38,6 @@ const Accounts = () => {
           </div>
         ))}
       </div>
-
-      {/* Botão de Voltar para o Menu */}
-      <Link to="/" className="voltar-button">Voltar para o Menu</Link>
     </div>
   );
 };

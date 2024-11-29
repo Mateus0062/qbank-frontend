@@ -10,7 +10,7 @@ class ApiProxy {
       });
 
       this.apiClient.interceptors.request.use((config) => {
-        const token = getToken(); // Obtém o token de autenticação
+        const token = getToken(); 
         if (token) {
           config.headers['Authorization'] = `Bearer ${token}`;
         }
