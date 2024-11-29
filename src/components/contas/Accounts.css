@@ -1,18 +1,101 @@
+/* src/components/Accounts.css */
+
+/* Contêiner principal que exibe as contas */
 .contas-container {
     display: flex;
-    align-items:flex-start;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
     min-height: 50vh;
     color: #fff;
     font-size: 16px;
+    padding: 20px;
 }
 
+/* Estilização do título "Contas" */
+.accounts {
+    font-size: 32px;
+    margin-left: 900px;
+    color: #450000;
+}
+
+/* Estilização para cada item da lista */
 li {
     color: #450000;
 }
 
-.accounts {
-    font-size: 32px;
-    margin-left: 900px;
+/* Estilos para o contêiner das contas */
+.accounts-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+/* Cartão de cada conta */
+.account-card {
+    background: #611212; /* Cor do fundo do cartão */
+    color: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 280px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Efeito de hover no cartão */
+.account-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Título dentro do cartão de cada conta */
+.account-card h3 {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Estilização das informações dentro do cartão */
+.account-card p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+/* Destaque para os títulos das informações (ex: Nome, Idade, etc.) */
+.account-card strong {
+    color: #ffcc00;
+}
+
+/* Botão "Voltar para o Menu" */
+.voltar-button {
+    background: #fff;
+    color: #450000;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid #450000;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+    margin-top: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeito de hover no botão */
+.voltar-button:hover {
+    background: #450000;
+    color: #fff;
+    transform: scale(1.05);
 }
